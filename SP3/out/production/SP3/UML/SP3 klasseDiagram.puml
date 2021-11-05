@@ -1,0 +1,62 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+Tournament<--KnockoutTournament
+Team*--Player
+Tournament*--Team
+Player*-- UI
+Main*--KnockoutTournament
+KnockoutTournament<-- Match
+Tournament<-- Match
+
+class Player{
+- String name
+getPlayer()
+setPlayer()
+-Boolean isTeamLeader
+
+}
+
+class Team{
+- String teamName;
+- int teamID;
+- ArrayList <Player> team;
+getTeams()
+setTeams()
+}
+
+abstract class Tournament {
+- ArrayList <team> teams
+- void pairTeams(ArrayList <team>)
+- Date Deadline
+pickWinner()
+
+
+}
+
+class KnockoutTournament {
+Boolean isWinner;
+- void pairTeams(ArrayList <team>)
+-void pickWinner()
+}
+
+class UI {
+String getUserInput (String msg)
+}
+
+class Main{
+
+static main(String[] args)
+}
+
+class Match {
+-team[2] teams
+-Date(int_day, int_month, int_year);
++void setDate(int_day, int_month, int_year)
++String getDate()
++getWinner()
++setWinner()
++ setScore()
++getScore()
+}
+@enduml
