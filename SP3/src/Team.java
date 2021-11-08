@@ -1,15 +1,19 @@
 import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+import java.io.File;
+import java.io.FileNotFoundException;
 //TODO SCANNER READ FROM FILE
 public class Team {
-    private String teamName;
-    private int teamID;
-    private ArrayList <Player> team = new ArrayList<Player>();
 
-    public Team(String teamName, int teamID, ArrayList<Player> team) {
+    private List<String> teamName;
+    private int teamID;
+    private ArrayList<Player> team;
+
+    public Team(List<String> teamName, int teamID, List<Player> team) {
         this.teamName = teamName;
         this.teamID = teamID;
-        this.team = team;
-
+        this.team = (ArrayList<Player>) team;
     }
 
     public String getTeamName() {
