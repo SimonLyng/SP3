@@ -1,6 +1,16 @@
-public class KnockoutTournament extends Tournament {
-Boolean isWinner;
+import java.util.ArrayList;
 
-//TO-DO add arrayList with the team matchup
+public class KnockoutTournament extends Tournament {
+    private ArrayList<Team[]> matchups;
+
+    public KnockoutTournament(String name, int ID, ArrayList<Team> teams){
+        super(name, ID, teams);
+
+    }
+
+    @Override
+    void TeamMatchups() {
+
+    }
 
 }
