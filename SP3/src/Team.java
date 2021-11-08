@@ -16,11 +16,11 @@ public class Team {
         this.team = (ArrayList<Player>) team;
     }
 
-    public String getTeamName() {
+    public List<String> getTeamName() {
         return teamName;
     }
 
-    public void setTeamName(String teamName) {
+    public void setTeamName(List<String> teamName) {
         this.teamName = teamName;
     }
 
