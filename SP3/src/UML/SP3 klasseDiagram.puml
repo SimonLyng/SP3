@@ -36,7 +36,7 @@ abstract class Tournament {
 -int ID;
 -ArrayList<Team> teams; [16]
 +Tournament(String name, int ID, ArrayList<Team> teams)
-abstract void TeamMatchups();
++abstract void TeamMatchups();
  +void Deadline(int x)
 
 
@@ -49,7 +49,7 @@ Boolean isWinner;
 }
 
 class UI {
-String getUserInput (String msg)
++String getUserInput (String msg)
 -List<Player> playernameScan()
 -String teamnameScan()
 }

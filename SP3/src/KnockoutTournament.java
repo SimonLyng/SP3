@@ -1,4 +1,6 @@
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class KnockoutTournament extends Tournament {
     private ArrayList<Team[]> matchups;
@@ -7,10 +9,5 @@ public class KnockoutTournament extends Tournament {
         super(name, ID, teams);
 
     }
-
-    @Override
-    void TeamMatchups() {
-
     }
 
-}
