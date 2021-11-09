@@ -38,28 +38,25 @@ public class UI {
         }
 
         //tildel teamnavne fra det her loop til splits + currentword+split ved afsnit
-        private String teamnameScan()throws FileNotFoundException{
-                File _teamnames=new File("src/Teamnames.txt");
-                Scanner scanTeams=new Scanner(_teamnames);
-                String inputFromFileT="";
-                ArrayList<Team> teams=new ArrayList<>();
-                ArrayList<String> teamnames=new ArrayList<>();
+        private ArrayList<Team> teamnameScan() throws FileNotFoundException {
+                File _teamnames = new File("src/Teamnames.txt");
+                Scanner scanTeams = new Scanner(_teamnames);
+                String inputFromFileT = "";
+                ArrayList<Team> teams = new ArrayList<>();
+                ArrayList<String> teamnames = new ArrayList<>();
 
-                while (scanTeams.hasNextLine())
-
-                {
+                while (scanTeams.hasNextLine()) {
                         inputFromFileT += scanTeams.nextLine();
                         teamnames.add(scanTeams.nextLine());
 
                 }
-                for(int i=0;i<=teamnames.toArray().length;i++){
-                        List<String> split=teamnames.subList(i,i);
-                        teams.add(new Team(split,i+1,playernameScan(i)));
+                for (int i = 0; i <= teamnames.toArray().length; i++) {
+                        List<String> split = teamnames.subList(i, i);
+                        teams.add(new Team(split, i + 1, playernameScan(i)));
 
 
                 }
-                return inputFromFileT;
+                return teams;
         }
-
 }
 

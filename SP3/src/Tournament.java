@@ -7,7 +7,7 @@ public abstract class Tournament {
     private int ID;
     private ArrayList<Team> teams;
 
-    public Tournament(String name, int ID, ArrayList<Team> teams) {
+    public Tournament(String name, int ID, ArrayList<Team> teams)   {
         this.name = name;
         this.ID = ID;
         this.teams = teams;
