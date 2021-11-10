@@ -18,17 +18,17 @@ public abstract class Tournament {
 
     void TeamMatchups(ArrayList<Team> teams) throws FileNotFoundException {
 
-        UI ui=new UI();
+
         Collections.shuffle(teams);
         System.out.println("Match-ups are: ");
         Team team_1,team_2;
-        for(int i=ui.teamnameScan().toArray().length+1;i<=(ui.teamnameScan().toArray().length+1)/2;i++){
-            team_1=(ui.teamnameScan().get(0));
-            System.out.println(ui.teamnameScan().get(0).getTeamName()+"/n/"+"VS");
-            ui.teamnameScan().remove(0);
-            team_2=(ui.teamnameScan().get(0));
-            System.out.println(ui.teamnameScan().get(0).getTeamName());
-            ui.teamnameScan().remove(0);
+        int i=0;
+        for(int j=0;j<teams.size()-1;j+=2){
+            team_1=teams.get(j);
+            System.out.println(team_1.getTeamName()+"\n"+"VS");
+            team_2=teams.get(j+1);
+            System.out.println(team_2.getTeamName()+"\n");
+
 
         }
         System.out.println("To get next round of match-ups, remove losing teams from Teamnames file.");
@@ -40,6 +40,5 @@ public abstract class Tournament {
         LocalDate currentDate = LocalDate.now();
         LocalDate deadline = LocalDate.now().plusDays(x);
         System.out.println("Tournament is in " + x + " days");
-        }
     }
-
+}

@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 public class UI {
 
-        public List<Player> playernameScan() throws FileNotFoundException {
+        public List<Player> playernameScan(int i) throws FileNotFoundException {
                 File playernames = new File("src/Playernames.txt");
                 Scanner scanPlayers = new Scanner(playernames);
                 //String inputFromFileP = "";
@@ -15,7 +15,7 @@ public class UI {
                         //inputFromFileP += scanPlayers.nextLine();
                         players.add(new Player(scanPlayers.nextLine(), false));
                 }
-                List<Player> split = players.subList(0,1);
+                List<Player> split = players.subList(i,i+1);
                 return split; //return 2 players.
         }
 
@@ -26,18 +26,15 @@ public class UI {
                 //String inputFromFileT = "";
                 ArrayList<Team> teams = new ArrayList<>();
                 ArrayList<String> teamnames = new ArrayList<>();
-
+                int i=0;
                 while (scanTeams.hasNextLine()) {
                         //inputFromFileT += scanTeams.nextLine();
-                        teamnames.add(scanTeams.nextLine());
-
+                        //teamnames.add(scanTeams.nextLine());
+                        //List<String> split = teamnames.subList(i, i);
+                        teams.add(new Team(scanTeams.nextLine(), i + 1, playernameScan(i)));
+                        i++;
                 }
-                for (int i = 0; i <= teamnames.toArray().length; i++) {
-                        List<String> split = teamnames.subList(i, i);
-                        teams.add(new Team(split, i + 1, playernameScan()));
 
-
-                }
                 return teams;
         }
 

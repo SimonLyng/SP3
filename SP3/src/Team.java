@@ -3,24 +3,23 @@ import java.util.List;
 import java.util.Scanner;
 import java.io.File;
 import java.io.FileNotFoundException;
-//TODO SCANNER READ FROM FILE
 public class Team {
 
-    private List<String> teamName;
+    private String teamName;
     private int teamID;
-    private ArrayList<Player> team;
+    private List<Player> team;
 
-    public Team(List<String> teamName, int teamID, List<Player> team) {
+    public Team(String teamName, int teamID, List<Player> team) {
         this.teamName = teamName;
         this.teamID = teamID;
-        this.team = (ArrayList<Player>) team;
+        this.team = team;
     }
 
-    public List<String> getTeamName() {
+    public String getTeamName() {
         return teamName;
     }
 
-    public void setTeamName(List<String> teamName) {
+    public void setTeamName(String teamName) {
         this.teamName = teamName;
     }
 
@@ -32,7 +31,7 @@ public class Team {
         this.teamID = teamID;
     }
 
-    public ArrayList<Player> getTeam() {
+    public List<Player> getTeam() {
         return team;
     }
 

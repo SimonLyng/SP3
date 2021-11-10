@@ -23,12 +23,13 @@ class Team{
 -List<String> teamName;
 -int teamID;
 -ArrayList<Player> team;
-+List<String> getTeamName()
-+void setTeamName(List<String> teamName)
++Team(String teamName, int teamID, List<Player> team)
++String getTeamName()
++void setTeamName(String teamName)
 +int getTeamID()
 +void setTeamID(int teamID)
-+ArrayList<Player> getTeam()
-+void setTeam(ArrayList<Player> team)
+ +List<Player> getTeam()
+ +void setTeam(ArrayList<Player> team)
 }
 
 abstract class Tournament {
@@ -36,7 +37,7 @@ abstract class Tournament {
 -int ID;
 -ArrayList<Team> teams; [16]
 +Tournament(String name, int ID, ArrayList<Team> teams)
-+abstract void TeamMatchups();
++ void TeamMatchups(ArrayList<Team> teams);
  +void Deadline(int x)
 
 
@@ -49,14 +50,19 @@ Boolean isWinner;
 }
 
 class UI {
-+String getUserInput (String msg)
--List<Player> playernameScan()
--String teamnameScan()
++List<Player> playernameScan()
++String teamnameScan()
 }
 
 class Main{
 
 static main(String[] args)
+ ui = new UI();
+ ui.playernameScan();
+ KnockoutTournament knockoutTournament = new KnockoutTournament();
+  knockoutTournament.Deadline(7);
+  knockoutTournament.TeamMatchups(();
+
 }
 
 class Match {
