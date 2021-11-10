@@ -3,23 +3,17 @@
 object Player
 object Teams
 object Tournament
-object Results
-object TournamentPresident
 object Deadline
-object KnockoutTournament
 object UI
-object Draw
 object Schedule
+object Results
+object KnockoutTournament
+
 
 KnockoutTournament*--Tournament
 Teams*--Player
 Tournament*--Teams
-Tournament*--TournamentPresident
-TournamentPresident*-- UI
-UI *-- Results
-Teams *-- TournamentPresident
-Deadline *-- TournamentPresident
-Draw *-- Tournament
+UI*--T
 
 
 @enduml

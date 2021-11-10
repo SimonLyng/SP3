@@ -4,12 +4,11 @@
 Tournament<--KnockoutTournament
 Team*--Player
 Tournament*--Team
-Player*-- UI
 Main*--KnockoutTournament
 KnockoutTournament<-- Match
 Tournament<-- Match
-Main*-- UI
-
+Main*-- Admin
+Match*--Team
 class Player{
 - String playerName;
  -Boolean isTeamLeader;
@@ -49,19 +48,19 @@ Boolean isWinner;
 -void pickWinner()
 }
 
-class UI {
+class Admin {
 +List<Player> playernameScan()
-+String teamnameScan()
++ ArrayList<Team> teamnameScan()
 }
 
 class Main{
 
 static main(String[] args)
- ui = new UI();
- ui.playernameScan();
+ admin = new Admin();
+ admin.playernameScan();
  KnockoutTournament knockoutTournament = new KnockoutTournament();
-  knockoutTournament.Deadline(7);
-  knockoutTournament.TeamMatchups(();
+ knockoutTournament.Deadline(7);
+ knockoutTournament.TeamMatchups(();
 
 }
 

@@ -1,14 +1,13 @@
 import java.io.FileNotFoundException;
-import java.util.List;
 
 public class Main {
-    static UI ui;
+    static Admin admin;
     public static void main(String[] args) throws FileNotFoundException {
-        ui = new UI();
-        ui.playernameScan(0);
-        KnockoutTournament knockoutTournament = new KnockoutTournament("Bordfodboldturnering", 1,ui.teamnameScan());
+        admin = new Admin();
+        admin.playernameScan(0);
+        KnockoutTournament knockoutTournament = new KnockoutTournament("Bordfodboldturnering", 1, admin.teamnameScan());
         knockoutTournament.Deadline(7);
-        knockoutTournament.TeamMatchups(ui.teamnameScan()); //Her bliver der sendt ArrayList af teams med
+        knockoutTournament.TeamMatchups(admin.teamnameScan()); //Her bliver der sendt ArrayList af teams med
     }
 
 

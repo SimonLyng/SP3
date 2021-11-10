@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class UI {
+public class Admin {
 
         public List<Player> playernameScan(int i) throws FileNotFoundException {
                 File playernames = new File("src/Playernames.txt");
