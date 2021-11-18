@@ -1,19 +1,20 @@
+import java.io.FileNotFoundException;
 import java.sql.*;
 import java.util.ArrayList;
 public class DBConnector implements IO {
 
     // database URL
-    static final String DB_URL = "jdbc:mysql://localhost/sp3";
+    static final String DB_URL = "jdbc:mysql://localhost/team";
 
     //  Database credentials
     static final String USER = "root";
     static final String PASS = "100498Kristian";
 
-
-    public String[] readTeamData() {
+    public ArrayList<Team> readTeamData()  {
         String[] Team_data = new String[40];
         Connection conn = null;
         Statement stmt = null;
+        ArrayList<Team> teams=new ArrayList<>();
         try {
             //STEP 2: Register JDBC driver
             // Class.forName("com.mysql.jdbc.Driver");
@@ -36,6 +37,7 @@ public class DBConnector implements IO {
                 int teamID = rs.getInt("teamID");
                 String player1 = rs.getString("player1");
                 String player2 = rs.getString("player2");
+                teams.add(new Team(teamName,teamID,player1,player2));
                 Team_data[teamID - 1] = teamName + "," + teamID + "," + player1 + "," + player2;
             }
             //STEP 6: Clean-up environment
@@ -61,8 +63,9 @@ public class DBConnector implements IO {
             } catch (SQLException se) {
                 se.printStackTrace();
             }//end finally try
+
         }//end try
-        return Team_data;
+        return teams;
     }
 
     public void createTeam(ArrayList<Team> t1){

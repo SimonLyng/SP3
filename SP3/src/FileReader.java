@@ -23,14 +23,10 @@ public class FileReader {
         public ArrayList<Team> teamnameScan() throws FileNotFoundException {
                 File _teamnames = new File("src/Teamnames.txt");
                 Scanner scanTeams = new Scanner(_teamnames);
-                //String inputFromFileT = "";
                 ArrayList<Team> teams = new ArrayList<>();
                 ArrayList<String> teamnames = new ArrayList<>();
                 int i=0;
                 while (scanTeams.hasNextLine()) {
-                        //inputFromFileT += scanTeams.nextLine();
-                        //teamnames.add(scanTeams.nextLine());
-                        //List<String> split = teamnames.subList(i, i);
                         teams.add(new Team(scanTeams.nextLine(), i + 1, playernameScan(i)));
                         i++;
                 }

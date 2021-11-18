@@ -1,4 +1,6 @@
-public interface IO extends {
+import java.util.ArrayList;
+
+public interface IO {
     // read teams
-    String[] readTeamData();
+    ArrayList<Team> readTeamData();
 }

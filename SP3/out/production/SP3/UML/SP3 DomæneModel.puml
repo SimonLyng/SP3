@@ -4,7 +4,7 @@ object Player
 object Teams
 object Tournament
 object Deadline
-object UI
+object Admin
 object Schedule
 object Results
 object KnockoutTournament
@@ -13,7 +13,8 @@ object KnockoutTournament
 KnockoutTournament*--Tournament
 Teams*--Player
 Tournament*--Teams
-UI*--T
+Admin*--Tournament
+
 
 
 @enduml
