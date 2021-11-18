@@ -21,17 +21,20 @@ public abstract class Tournament {
 
         Collections.shuffle(teams);
         System.out.println("Match-ups are: ");
-        Team team_1,team_2;
-        int i=0;
-        for(int j=0;j<teams.size()-1;j+=2){
-            team_1=teams.get(j);
-            System.out.println(team_1.getTeamName()+"\n"+"VS");
-            team_2=teams.get(j+1);
-            System.out.println(team_2.getTeamName()+"\n");
-
-
+        Team team_1, team_2;
+        int i = 0;
+        for (int j = 0; j < teams.size() - 1; j += 2) {
+            team_1 = teams.get(j);
+            System.out.println(team_1.getTeamName() + "\n" + "VS");
+            team_2 = teams.get(j + 1);
+            System.out.println(team_2.getTeamName() + "\n");
+            if (Math.random() < 0.5) {
+                System.out.println(team_1.getTeamName() + " won the match");
+            } else {
+                System.out.println(team_2.getTeamName() + " won the match");
+            }
+            System.out.println("To get next round of match-ups, remove losing teams from Teamnames file.");
         }
-        System.out.println("To get next round of match-ups, remove losing teams from Teamnames file.");
     }
 
 

@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class FileReader implements IO{
+public class FileReader {
 
         public List<Player> playernameScan(int i) throws FileNotFoundException {
                 File playernames = new File("src/Playernames.txt");
@@ -37,6 +37,5 @@ public class FileReader implements IO{
 
                 return teams;
         }
-
 
 }
